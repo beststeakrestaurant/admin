@@ -1,19 +1,18 @@
-# Admin
+# Best Steak Restaurant Admin application
 
-To start your Phoenix app:
+SPA for restaurants administration pages. IT enables admins and restaurant owneres to manage restaurant details.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Start Phoenix endpoint with `mix phoenix.server`
+Built using:
+  * Phoenix and Elixir for speed and code readability
+  * React and ES6 for client side code
+  * Material UI for styling react components
+  * Webpack to build assets and for Hot reload durind development mode
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Code styling is ensured using:
+  * [`credo`](https://github.com/rrrene/credo) on server side elixir.
+  * [`eslint`](http://eslint.org/) for es6 and react code.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+You can run the application by:
+  * mix phoenix.server  - to start phoenix and webpack dev mode.
+  * visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
