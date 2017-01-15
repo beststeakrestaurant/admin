@@ -1,6 +1,6 @@
 # Best Steak Restaurant Admin application
 
-SPA for restaurants administration pages. IT enables admins and restaurant owneres to manage restaurant details.
+SPA for restaurants administration pages. Enables admins and restaurant owneres to manage restaurant details.
 
 Built using:
   * Phoenix and Elixir for speed and code readability
@@ -9,7 +9,7 @@ Built using:
   * Webpack to build assets and for Hot reload durind development mode
 
 Code styling is ensured using:
-  * [`credo`](https://github.com/rrrene/credo) on server side elixir.
+  * [`credo`](https://github.com/rrrene/credo) for server side elixir code.
   * [`eslint`](http://eslint.org/) for es6 and react code.
 
 You can run the application by:
