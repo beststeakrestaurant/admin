@@ -1,6 +1,6 @@
 # Best Steak Restaurant Admin application
 
-SPA for restaurants administration pages. Enables admins and restaurant owneres to manage restaurant details.
+SPA for restaurants administration pages. Enables admins and restaurant owners to manage restaurant details.
 
 Built using:
   * Phoenix and Elixir for speed and code readability
