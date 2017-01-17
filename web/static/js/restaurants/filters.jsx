@@ -1,45 +1,63 @@
 import React from 'react'
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more'
-import { Toolbar, ToolbarGroup, ToolbarTitle, ToolbarSeparator, DropDownMenu, MenuItem, IconMenu, FontIcon, RaisedButton, IconButton } from 'material-ui'
+import { Grid, Row, Col } from 'react-flexbox-grid'
+import { DropDownMenu, MenuItem, TextField, Checkbox } from 'material-ui'
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    marginBottom: 16,
+  },
+}
 
 export default class Filters extends React.Component {
   state = {
-    value: 3,
+    us_state: 0,
+    state: 0,
   }
 
-  handleChange = () => console.log('Gigi')
+  handleChange = () => console.log('Change US state')
 
   render() {
     return (
-      <Toolbar>
-        <ToolbarGroup firstChild >
-          <DropDownMenu value={this.state.value} onChange={this.handleChange}>
-            <MenuItem value={1} primaryText="All Broadcasts" />
-            <MenuItem value={2} primaryText="All Voice" />
-            <MenuItem value={3} primaryText="All Text" />
-            <MenuItem value={4} primaryText="Complete Voice" />
-            <MenuItem value={5} primaryText="Complete Text" />
-            <MenuItem value={6} primaryText="Active Voice" />
-            <MenuItem value={7} primaryText="Active Text" />
-          </DropDownMenu>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarTitle text="Options" />
-          <FontIcon className="material-icons">sort</FontIcon>
-          <ToolbarSeparator />
-          <RaisedButton label="Create Broadcast" primary />
-          <IconMenu
-            iconButtonElement={
-              <IconButton >
-                <NavigationExpandMoreIcon />
-              </IconButton>
-            }
-          >
-            <MenuItem primaryText="Download" />
-            <MenuItem primaryText="More Info" />
-          </IconMenu>
-        </ToolbarGroup>
-      </Toolbar>
+      <Grid fluid>
+        <Row bottom={'xs'}>
+          <Col xs={6} sm={4} lg={3} >
+            <TextField floatingLabelText="Restaurant name" />
+          </Col>
+          <Col xs={6} sm={4} lg={3} >
+            <TextField floatingLabelText="City" />
+          </Col>
+          <Col xs={6} sm={4} lg={2} >
+            <DropDownMenu value={this.state.state} onChange={this.handleChange}>
+              <MenuItem value={0} primaryText="--state--" />
+              <MenuItem value={1} primaryText="published" />
+              <MenuItem value={2} primaryText="registered" />
+            </DropDownMenu>
+          </Col>
+          <Col xs={6} sm={4} lg={2} >
+            <DropDownMenu value={this.state.us_state} onChange={this.handleChange}>
+              <MenuItem value={0} primaryText="--US state--" />
+              <MenuItem value={1} primaryText="AL" />
+              <MenuItem value={2} primaryText="NY" />
+            </DropDownMenu>
+          </Col>
+          <Col xs={6} sm={4} lg={2}>
+            <Checkbox
+              label="Listed in BSR"
+              style={styles.checkbox}
+            />
+          </Col>
+
+          <Col xs={6} sm={4} lg={2} >
+            <Checkbox
+              label="Featured"
+              style={styles.checkbox}
+            />
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

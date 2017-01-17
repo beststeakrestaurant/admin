@@ -30,16 +30,22 @@ if (env === 'dev') {
     new WatchMissingNodeModulesPlugin('node_modules')
   ]
   loaders = [{
-    test: /\.(js|jsx)$/,
-    loader: 'babel',
-    exclude: path.resolve(__dirname, 'node_modules'),
-    query: {
-      cacheDirectory: true
-    }
-  },
-  {
-    test: /\.css$/,
-    loader: 'style!css?importLoaders=1!postcss'
+      test: /\.(js|jsx)$/,
+      loader: 'babel',
+      exclude: path.resolve(__dirname, 'node_modules'),
+      query: {
+        cacheDirectory: true
+      }
+    },
+    {
+      test: /\.css$/,
+      loader: 'style!css?importLoaders=1!postcss',
+      exclude: /flexboxgrid/, // so we have to exclude it
+    },
+    {
+      test: /\.css$/,
+      loader: 'style!css?modules',
+      include: /flexboxgrid/,
   }]
 }
 
